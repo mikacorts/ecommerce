@@ -398,7 +398,6 @@ section{
 }
 
 /* Add or update these styles in css/style.css */
-
 .products .box-container {
    max-width: 1200px;
    margin: 0 auto;
@@ -421,7 +420,7 @@ section{
    box-shadow: var(--box-shadow);
    background-color: var(--white);
    position: relative;
-   min-height: 38rem; /* adjust as needed */
+   min-height: 40rem; /* ensure consistent box height */
 }
 
 .products .box-container .box .image {
@@ -434,8 +433,12 @@ section{
 
 .products .box-container .box .name {
    padding: 1rem 0;
-   font-size: 2rem;
+   font-size: clamp(1.4rem, 2vw, 2rem);
    color: var(--black);
+   max-height: 5rem;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
 }
 
 .products .box-container .box .price {
@@ -461,22 +464,25 @@ section{
    text-align: center;
    margin: 2rem 0;
 }
+
 .pagination .btn, .pagination span.btn {
-    display: inline-block;
-    margin: 0 0.2rem;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    border-radius: .5rem;
-    background: #753e26;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-    border: none;
+   display: inline-block;
+   margin: 0 0.2rem;
+   padding: 1rem 2rem;
+   font-size: 1.6rem;
+   border-radius: .5rem;
+   background: #753e26;
+   color: #fff;
+   cursor: pointer;
+   text-decoration: none;
+   border: none;
 }
+
 .pagination .btn:hover {
    background: #75360c;
    color: #e6dada;  
 }
+
 .about .flex{
    max-width: 1200px;
    margin:0 auto;
